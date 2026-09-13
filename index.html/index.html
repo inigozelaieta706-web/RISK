@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RISK</title>
+
+    <link rel="icon" type="image/png" href="ChatGPT Image 13 sept 2026, 09_55_59.png">
+
+    <style>
+        html {
+            background-color: rgb(69, 61, 56);
+        }
+
+        h1 {
+            font-family: Rubik Dirt, cursive;
+            font-size: 70px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 60px;
+            border: 2px solid black;
+            border-radius: 30px;
+            padding: 20px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .numero {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+            font-size: 40px;
+            text-align: center;
+            margin-top: -20px;
+        }
+
+  @media (max-width: 600px) {
+
+    h1 {
+        font-size: 55px;
+    }
+
+    body > div {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    h2 {
+        font-size: 45px;
+        width: 80%;
+    }
+
+    .numero {
+        font-size: 35px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <h1>RISK</h1>
+
+    <br><br><br><br>
+
+    <div style="display: flex; justify-content: space-around;">
+
+        <div>
+            <h2 onclick="sumarThrow()">Throws</h2>
+            <div id="throws" class="numero">0</div>
+        </div>
+
+        <div>
+            <h2 onclick="sumarTag()">Tags</h2>
+            <div id="tags" class="numero">0</div>
+        </div>
+
+        <div>
+            <h2 onclick="sumarPiece()">Pieces</h2>
+            <div id="pieces" class="numero">0</div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Cargar los números guardados
+        let throws = Number(localStorage.getItem("throws")) || 0;
+        let tags = Number(localStorage.getItem("tags")) || 0;
+        let pieces = Number(localStorage.getItem("pieces")) || 0;
+
+
+        // Mostrar los números al abrir la web
+        document.getElementById("throws").textContent = throws;
+        document.getElementById("tags").textContent = tags;
+        document.getElementById("pieces").textContent = pieces;
+
+
+        // Sumar Throw
+        function sumarThrow() {
+            throws++;
+
+            localStorage.setItem("throws", throws);
+
+            document.getElementById("throws").textContent = throws;
+        }
+
+
+        // Sumar Tag
+        function sumarTag() {
+            tags++;
+
+            localStorage.setItem("tags", tags);
+
+            document.getElementById("tags").textContent = tags;
+        }
+
+
+        // Sumar Piece
+        function sumarPiece() {
+            pieces++;
+
+            localStorage.setItem("pieces", pieces);
+
+            document.getElementById("pieces").textContent = pieces;
+        }
+
+    </script>
+
+</body>
+</html>
+
